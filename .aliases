@@ -1,0 +1,54 @@
+  GNU nano 8.3                                                                                                                       .aliases                                                                                                                                 # Modern replacements
+# Nur exa verwenden, wenn es existiert
+if command -v eza &> /dev/null; then
+  alias ls='eza -alh --icons --group-directories-first'
+  alias tree='eza -T'
+  alias la='eza -a'
+else
+  alias ls='ls -alh --color=auto'
+  alias tree='tree'
+fi
+
+# Nur bat verwenden, wenn vorhanden
+if command -v bat &> /dev/null; then
+  alias cat='bat'
+elif command -v batcat &> /dev/null; then
+  alias cat='batcat'
+fi
+
+# Nur rg verwenden, wenn vorhanden
+if command -v rg &> /dev/null; then
+  alias grep='rg'
+fi
+
+# System & Netzwerk
+alias ports="sudo netstat -tulanp"
+alias sniff="sudo tcpdump -i any"
+alias topnet="sudo nethogs"
+alias up="sudo apt update && sudo apt upgrade -y"
+
+# Recon
+alias whois="whois -H"
+alias digall="dig +nocmd any +multiline +noall +answer"
+alias recon="curl -s https://crt.sh/?q=$1 | grep -oE '[a-zA-Z0-9.-]+\.$1' | sort -u"
+
+# Scanning
+alias nmapf="sudo nmap -sC -sV -T4"
+alias mass="masscan -p1-65535 --rate=10000"
+alias ffufx="ffuf -w /usr/share/wordlists/dirb/common.txt -u http://\$1/FUZZ"
+
+# Exploit-DB
+alias searchsploit="/usr/bin/searchsploit"
+
+# Git Shortcuts (falls du eigene Tools versionierst)
+alias pushy="git add . && git commit -m 'update' && git push"
+alias clonex="git clone --depth=1"
+
+# Other
+alias ip="ip a | grep inet"
+alias pubip="curl ifconfig.me"
+
+
+
+
+
