@@ -15,11 +15,6 @@ elif command -v batcat &> /dev/null; then
   alias cat='batcat'
 fi
 
-# Only use rg if it exists
-if command -v rg &> /dev/null; then
-  alias grep='rg'
-fi
-
 # System & Network
 alias ports="sudo netstat -tulanp"
 alias sniff="sudo tcpdump -i any"
