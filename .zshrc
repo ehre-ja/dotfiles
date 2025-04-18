@@ -121,12 +121,12 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window=up:3"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+autoload -U add-zsh-hook
 
-
-
-
-
-
+# load banner
+if [[ $- == *i* && -t 1 ]]; then
+    bash ~/.banner.sh
+fi
 
 
 
