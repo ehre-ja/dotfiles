@@ -84,6 +84,11 @@ source $ZSH/oh-my-zsh.sh
 
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window=up:3"
+[[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[[ -f /usr/share/doc/fzf/examples/completion.zsh ]] && source /usr/share/doc/fzf/examples/completion.zsh
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
