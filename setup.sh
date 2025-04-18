@@ -24,7 +24,7 @@ if [[ $OS == "linux" ]]; then
   sudo apt update
   sudo apt install -y \
     zsh curl git wget tree fzf ripgrep bat \
-    eza nmap whois unzip nethogs btop
+    eza nmap whois unzip nethogs btop lolcat fortune
 elif [[ $OS == "mac" ]]; then
   if ! command -v brew &> /dev/null; then
     echo "🍺 Homebrew wird installiert..."
