@@ -24,12 +24,30 @@ alias up="sudo apt update && sudo apt upgrade -y"
 # Recon
 alias whois="whois -H"
 alias digall="dig +nocmd any +multiline +noall +answer"
-alias recon="curl -s https://crt.sh/?q=$1 | grep -oE '[a-zA-Z0-9.-]+\.$1' | sort -u"
+
+recon() {
+  if [ -z "$1" ]; then
+    echo "Usage: recon <domain>"
+    return 1
+  fi
+
+  echo "🔍 Searching for subdomains of $1..."
+  curl -s "https://crt.sh/?q=%25.$1" | grep -oE "[a-zA-Z0-9.-]+\\.$1" | sort -u | uniq
+}
 
 # Scanning
 alias nmapf="sudo nmap -sC -sV -T4"
-alias mass="masscan -p1-65535 --rate=10000"
-alias ffufx="ffuf -w /usr/share/wordlists/dirb/common.txt -u http://\$1/FUZZ"
+alias mass="sudo masscan -p1-65535 --rate=10000"
+
+ffufx() {
+  if [ -z "$1" ]; then
+    echo "❗ Usage: ffufx <domain>"
+    echo "👉 Example: ffufx example.com"
+    return 1
+  fi
+
+  ffuf -w /usr/share/wordlists/dirb/common.txt -u "http://$1/FUZZ"
+}
 
 # Exploit-DB
 alias searchsploit="/usr/bin/searchsploit"
