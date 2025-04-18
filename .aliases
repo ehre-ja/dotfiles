@@ -1,5 +1,5 @@
   GNU nano 8.3                                                                                                                       .aliases                                                                                                                                 # Modern replacements
-# Nur exa verwenden, wenn es existiert
+# Only use eza if it exists
 if command -v eza &> /dev/null; then
   alias ls='eza -alh --icons --group-directories-first'
   alias tree='eza -T'
@@ -9,19 +9,19 @@ else
   alias tree='tree'
 fi
 
-# Nur bat verwenden, wenn vorhanden
+# Only use bat/batcat if it exists
 if command -v bat &> /dev/null; then
   alias cat='bat'
 elif command -v batcat &> /dev/null; then
   alias cat='batcat'
 fi
 
-# Nur rg verwenden, wenn vorhanden
+# Only use rg if it exists
 if command -v rg &> /dev/null; then
   alias grep='rg'
 fi
 
-# System & Netzwerk
+# System & Network
 alias ports="sudo netstat -tulanp"
 alias sniff="sudo tcpdump -i any"
 alias topnet="sudo nethogs"
@@ -40,7 +40,7 @@ alias ffufx="ffuf -w /usr/share/wordlists/dirb/common.txt -u http://\$1/FUZZ"
 # Exploit-DB
 alias searchsploit="/usr/bin/searchsploit"
 
-# Git Shortcuts (falls du eigene Tools versionierst)
+# Git Shortcuts
 alias pushy="git add . && git commit -m 'update' && git push"
 alias clonex="git clone --depth=1"
 
