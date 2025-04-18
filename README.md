@@ -1,6 +1,6 @@
 # 🌐 Dotfiles by @ehre-ja
 
-Zsh + Powerlevel10k + Plugins + Aliases für Linux, WSL & macOS.  
+Zsh + Powerlevel10k + Plugins + Aliases for Linux, WSL & macOS.  
 Contains `zsh`, `eza`, `bat`, `ripgrep`, `fzf`, `nmap` and more
 
 ## ⚡ Installation
