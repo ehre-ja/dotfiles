@@ -77,6 +77,7 @@ echo "📂 Copying dotfiles "
 cp .zshrc ~/
 cp .aliases ~/
 cp .p10k.zsh ~/
+cp .banner.sh ~/
 
 # ----------------------------
 # 5.  set zsh as default shell
